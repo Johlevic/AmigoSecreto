@@ -1,6 +1,8 @@
 function validarSoloLetras(input) {
     // Elimina cualquier carácter que no sea una letra o un espacio
     input.value = input.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ\s]/g, '');
+
+
 }
 
 let amigos = [];
@@ -47,9 +49,14 @@ function sortearAmigo() {
         amigos = [];
         document.getElementById("listaAmigos").innerHTML = '';
 
+        document.getElementById('agregar').classList.add('disabled');
+        document.getElementById('agregar').disabled = true;
+
         
         lanzarConfeti();
         ocultarMostrarButton();
+
+
     }
     else{
         Swal.fire({
@@ -85,10 +92,16 @@ function ocultarMostrarButton() {
     buttonNuevo.classList.remove('hidden'); 
 }
 
+   
+
+
 function reiniciarSorteo() {
     document.getElementById("resultado").innerHTML = '';
     
     buttonSorteo.classList.remove('hidden');   
-    buttonNuevo.classList.add('hidden');       
+    buttonNuevo.classList.add('hidden');  
+
+    document.getElementById('agregar').classList.remove('disabled');
+    document.getElementById('agregar').disabled = false;
 }
 
