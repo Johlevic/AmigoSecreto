@@ -10,7 +10,7 @@ function agregarAmigo() {
 
     if (nameFriend === '') {
         Swal.fire({
-            icon: 'warning', // Icono válido
+            icon: 'warning', 
             title: '¡Alerta!',
             text: 'Por favor, inserte un nombre.',
         });
@@ -32,7 +32,7 @@ function actualizarListaAmigos() {
 function sortearAmigo() {
     if (amigos.length === 0) {
         Swal.fire({
-            icon: 'info', // Icono de información
+            icon: 'info', 
             title: 'Lista vacía',
             text: 'No hay amigos en la lista para sortear.',
         });
@@ -47,12 +47,13 @@ function sortearAmigo() {
         amigos = [];
         document.getElementById("listaAmigos").innerHTML = '';
 
-        // Lanza confeti al sortear
+        
         lanzarConfeti();
+        ocultarMostrarButton();
     }
     else{
         Swal.fire({
-            icon: 'warning', // Icono de información
+            icon: 'warning', 
             title: 'Información',
             text: 'La lista debe tener más de 1 registro para continuar.',
         });
@@ -67,5 +68,27 @@ function lanzarConfeti() {
         spread: 70,
         origin: { y: 0.6 },
     });
+}
+
+//Variables de los botones
+
+let buttonNuevo = document.getElementById('nuevoSorteo');
+let buttonSorteo = document.getElementById('sorteo');
+
+//Estado inicial del boton de reiniciar
+
+buttonNuevo.classList.add('hidden');
+
+function ocultarMostrarButton() {
+    
+    buttonSorteo.classList.add('hidden');   
+    buttonNuevo.classList.remove('hidden'); 
+}
+
+function reiniciarSorteo() {
+    document.getElementById("resultado").innerHTML = '';
+    
+    buttonSorteo.classList.remove('hidden');   
+    buttonNuevo.classList.add('hidden');       
 }
 

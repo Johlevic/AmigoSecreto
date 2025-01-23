@@ -150,6 +150,7 @@ ul , ol{
 .button-draw {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
@@ -157,13 +158,29 @@ ul , ol{
     font-size: 16px;
 }
 
+.button-reset{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+    
+}
+
 .button-draw img {
     margin-right: 40px;
 }
 
-.button-draw:hover {
+.button-draw:hover, .button-reset:hover {
     background-color: var(--color-button-hover);
     transition: all 0.2s linear;
+}
+
+.hidden {
+    display: none;  /* Oculta el elemento */
 }
 
 li{
@@ -173,7 +190,9 @@ li{
     
 }
 
-@media screen and (max-width:480px){
+
+@media screen and (max-width:800px){
+
     .header-banner{
         display: flex;
         flex-direction: column;
@@ -207,5 +226,5 @@ li{
         width: auto;
         justify-items: center;
     }
-    
+
 }
