@@ -192,7 +192,7 @@ ul {
     .input-section{
         display: flex;
         justify-content: center;
-        background-color: #05DF05;
+        
         width: auto;
         justify-items: center;
     }
