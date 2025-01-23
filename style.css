@@ -160,3 +160,41 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+
+@media screen and (max-width:480px){
+    .header-banner{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .header-banner img{
+        width: 20rem;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+    }
+   
+    
+
+    .main-content{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+            
+    }
+
+    .input-section{
+        display: flex;
+        justify-content: center;
+        background-color: #05DF05;
+        width: auto;
+        justify-items: center;
+    }
+    
+}
