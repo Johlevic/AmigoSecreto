@@ -17,7 +17,6 @@ function validarSoloLetras(input) {
   
     document.querySelector('#amigo').value = '';
   
-   
     actualizarListaAmigos();
   }
   
@@ -27,16 +26,23 @@ function validarSoloLetras(input) {
   }
   
   function sortearAmigo() {
-    
+   
     if (amigos.length === 0) {
       alert("No hay amigos en la lista para sortear.");
       return;
     }
-  
+ 
     const indiceAleatorio = Math.floor(Math.random() * amigos.length);
   
+    
     const amigoSorteado = amigos[indiceAleatorio];
   
+    
     document.getElementById("resultado").innerHTML = `<p>🎉 El amigo sorteado es: <strong>${amigoSorteado}</strong></p>`;
+  
+    document.getElementById("listaAmigos").innerHTML = '';
+  
+   
+    amigos = [];
   }
   
